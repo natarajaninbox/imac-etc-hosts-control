@@ -9,6 +9,9 @@ LOG_FILE=/tmp/etc-hosts-$TIMESTAMP.out
 # Remove previous log files
 rm -rf /tmp/etc-hosts-*.out
 
+# Remove previous etc/hosts file
+rm -rf $TMP_HOST_FILE
+
 # Redirect output to log file
 exec > $LOG_FILE 2>&1
 
