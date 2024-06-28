@@ -13,9 +13,9 @@ cat /etc/hosts
 # Add List of domains need to be blocked  #
 # #########################################
 
-127.0.0.1 www.youtube.com m.youtube.com youtube.com googlevideo.com youtu.be youtube-nocookie.com youtube.com youtube.googleapis.com youtubei.googleapis.com ytimg.com ytimg.l.google.com
+127.0.0.1 www.youtube.com m.youtube.com youtube.com googlevideo.com youtu.be youtube-nocookie.com youtube.com youtube.googleapis.com youtubei.googleapis.com ytimg.com ytimg.l.google.com music.youtube.com
 
-::1 www.youtube.com m.youtube.com youtube.com googlevideo.com youtu.be youtube-nocookie.com youtube.com youtube.googleapis.com youtubei.googleapis.com ytimg.com ytimg.l.google.com
+::1 www.youtube.com m.youtube.com youtube.com googlevideo.com youtu.be youtube-nocookie.com youtube.com youtube.googleapis.com youtubei.googleapis.com ytimg.com ytimg.l.google.com music.youtube.com
 
 # ################# End #####################
-# 27June24 11:21 PM
+# 27June24 11:28 PM
