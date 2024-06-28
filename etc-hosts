@@ -9,5 +9,11 @@ cat /etc/hosts
 255.255.255.255	broadcasthost
 ::1             localhost
 
+# #########################################
+# Add List of domains need to be blocked  #
+# #########################################
+
 0.0.0.0 youtube.com
 ::1 youtube.com
+
+# ################# End ###################
