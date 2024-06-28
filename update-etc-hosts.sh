@@ -10,7 +10,7 @@ LOG_FILE=/tmp/etc-hosts-$TIMESTAMP.out
 exec > $LOG_FILE 2>&1
 
 # Fetch the latest hosts file from GitHub
-wget -q https://raw.githubusercontent.com/natarajaninbox/imac-etc-hosts-control/main/etc-hosts -O $TMP_HOST_FILE || exit 1
+curl -s https://raw.githubusercontent.com/natarajaninbox/imac-etc-hosts-control/main/etc-hosts -o $TMP_HOST_FILE || exit 1
 
 # Get the checksum of the current file
 checksum=$(md5 -q $HOST_FILE)
