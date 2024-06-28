@@ -10,4 +10,4 @@ cat /etc/hosts
 ::1             localhost
 
 0.0.0.0 youtube.com
-::1 youtube.com 
+::1 youtube.com

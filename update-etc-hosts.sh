@@ -29,6 +29,12 @@ if [[ "$checksum" != "$github_checksum" ]]; then
   # Flush DNS cache
   sudo dscacheutil -flushcache
   sudo killall -HUP mDNSResponder
+
+  sudo killall -HUP mDNSResponderHelper
+  sudo discoveryutil mdnsflushcache
+  sudo discoveryutil udnsflushcaches
+
+
   echo "DNS cache flushed"
 else
   echo "No changes detected"
