@@ -28,9 +28,13 @@ if [[ "$checksum" != "$github_checksum" ]]; then
   mv $TMP_HOST_FILE $HOST_FILE
   # Flush DNS cache
   sudo dscacheutil -flushcache
-  sudo killall -HUP mDNSResponder
-  sudo killall -HUP mDNSResponderHelper
   echo "DNS cache flushed"
+
+  sudo killall -HUP mDNSResponder
+  echo "Killed mDNSResponder"
+
+  sudo killall -HUP mDNSResponderHelper
+  echo "Killed mDNSResponderHelper"
 else
   echo "No changes detected"
 fi
