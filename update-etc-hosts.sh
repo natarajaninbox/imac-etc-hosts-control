@@ -6,6 +6,9 @@ TMP_HOST_FILE=/tmp/etc-hosts
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE=/tmp/etc-hosts-$TIMESTAMP.out
 
+# Remove previous log files
+rm -rf /tmp/etc-hosts-*.out
+
 # Redirect output to log file
 exec > $LOG_FILE 2>&1
 
