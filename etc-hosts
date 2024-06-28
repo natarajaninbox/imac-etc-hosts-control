@@ -13,8 +13,8 @@ cat /etc/hosts
 # Add List of domains need to be blocked  #
 # #########################################
 
-127.0.0.1 youtube.com www.youtube.com m.youtube.com
-::1 youtube.com www.youtube.com m.youtube.com
-0.0.0.0 youtube.com www.youtube.com m.youtube.com
+127.0.0.1 www.youtube.com m.youtube.com youtube.com
+::1 www.youtube.com m.youtube.com youtube.com
+0.0.0.0 www.youtube.com m.youtube.com youtube.com
 
 # ################# End ###################
