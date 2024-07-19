@@ -1,25 +1,60 @@
-cat /etc/hosts
 ##
 # Host Database
 #
 # localhost is used to configure the loopback interface
 # when the system is booting.  Do not change this entry.
 ##
-127.0.0.1	localhost
-255.255.255.255	broadcasthost
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
 ::1             localhost
 
 # #########################################
 # Add List of domains need to be blocked  #
 # #########################################
 
-127.0.0.1 youtube.com m.youtube.com googlevideo.com youtu.be youtube-nocookie.com youtube.googleapis.com youtubei.googleapis.com ytimg.com ytimg.l.google.com music.youtube.com
+127.0.0.1       youtube.com
+127.0.0.1       m.youtube.com
+127.0.0.1       googlevideo.com
+127.0.0.1       youtu.be
+127.0.0.1       youtube-nocookie.com
+127.0.0.1       youtube.googleapis.com
+127.0.0.1       youtubei.googleapis.com
+127.0.0.1       ytimg.com
+127.0.0.1       ytimg.l.google.com
+127.0.0.1       music.youtube.com
 
-127.0.0.1 www.youtube.com www.m.youtube.com www.googlevideo.com www.youtu.be www.youtube-nocookie.com www.youtube.googleapis.com www.youtubei.googleapis.com www.ytimg.com www.ytimg.l.google.com www.music.youtube.com
+127.0.0.1       www.youtube.com
+127.0.0.1       www.m.youtube.com
+127.0.0.1       www.googlevideo.com
+127.0.0.1       www.youtu.be
+127.0.0.1       www.youtube-nocookie.com
+127.0.0.1       www.youtube.googleapis.com
+127.0.0.1       www.youtubei.googleapis.com
+127.0.0.1       www.ytimg.com
+127.0.0.1       www.ytimg.l.google.com
+127.0.0.1       www.music.youtube.com
 
-::1 youtube.com m.youtube.com googlevideo.com youtu.be youtube-nocookie.com youtube.googleapis.com youtubei.googleapis.com ytimg.com ytimg.l.google.com music.youtube.com
+::1             youtube.com
+::1             m.youtube.com
+::1             googlevideo.com
+::1             youtu.be
+::1             youtube-nocookie.com
+::1             youtube.googleapis.com
+::1             youtubei.googleapis.com
+::1             ytimg.com
+::1             ytimg.l.google.com
+::1             music.youtube.com
 
-::1 www.youtube.com www.m.youtube.com www.googlevideo.com www.youtu.be www.youtube-nocookie.com www.youtube.googleapis.com www.youtubei.googleapis.com www.ytimg.com www.ytimg.l.google.com www.music.youtube.com
+::1             www.youtube.com
+::1             www.m.youtube.com
+::1             www.googlevideo.com
+::1             www.youtu.be
+::1             www.youtube-nocookie.com
+::1             www.youtube.googleapis.com
+::1             www.youtubei.googleapis.com
+::1             www.ytimg.com
+::1             www.ytimg.l.google.com
+::1             www.music.youtube.com
 
 # ################# End #####################
-# 27June24 11:39 PM
+# 18July24 11:39 PM

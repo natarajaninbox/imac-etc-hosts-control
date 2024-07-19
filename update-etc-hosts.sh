@@ -7,16 +7,20 @@ TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE=/tmp/etc-hosts-$TIMESTAMP.out
 
 # Remove previous log files
-rm -rf /tmp/etc-hosts-*.out
-
-# # Remove previous etc/hosts file
-# rm -rf $TMP_HOST_FILE
+rm -f /tmp/etc-hosts-*.out
 
 # Redirect output to log file
 exec > $LOG_FILE 2>&1
 
 # Fetch the latest hosts file from GitHub
-curl -s https://raw.githubusercontent.com/natarajaninbox/imac-etc-hosts-control/main/etc-hosts -o $TMP_HOST_FILE || exit 1
+echo "Downloading latest hosts file from GitHub..."
+curl -s -o $TMP_HOST_FILE https://raw.githubusercontent.com/natarajaninbox/imac-etc-hosts-control/main/etc-hosts || { echo "Failed to download file"; exit 1; }
+
+# Check if the file was downloaded successfully
+if [[ ! -f $TMP_HOST_FILE ]]; then
+  echo "Download failed. File does not exist."
+  exit 1
+fi
 
 # Get the checksum of the current file
 checksum=$(md5 -q $HOST_FILE)
@@ -29,18 +33,18 @@ echo "GitHub checksum: $github_checksum"
 
 # If the checksums don't match, update the file
 if [[ "$checksum" != "$github_checksum" ]]; then
-  echo "Updating local /etc/hosts file"
-  cp $HOST_FILE $HOST_FILE.$TIMESTAMP.bak  
+  echo "Updating local /etc/hosts file..."
+  cp $HOST_FILE $HOST_FILE.$TIMESTAMP.bak
   mv $TMP_HOST_FILE $HOST_FILE
+
   # Flush DNS cache
+  echo "Flushing DNS cache..."
   sudo dscacheutil -flushcache
-  echo "DNS cache flushed"
-
   sudo killall -HUP mDNSResponder
-  echo "Killed mDNSResponder"
-
   sudo killall -HUP mDNSResponderHelper
-  echo "Killed mDNSResponderHelper"
+  
+  echo "DNS cache flushed and mDNSResponder services restarted."
+
 else
-  echo "No changes detected"
+  echo "No changes detected. The files are identical."
 fi
